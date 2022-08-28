@@ -1,0 +1,54 @@
+<div [ngStyle]="{'background' : 'url(../assets/img/bg1.jpg)'}">
+<div class="bg">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="h3 fw-bold text-dark my-4">Create Doctor 
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <form >
+          
+          <div class="mb-2">
+            <label for="">Name</label>
+            <input name="name" [(ngModel)]="doctor.docName" name="name" [value]="doctor.docName" required="true" type="text" class="form-control" placeholder="Doctor name">
+          </div>
+          <div class="mb-2">
+            <label for="">Specialization</label>
+            <input name="field" [(ngModel)]="doctor.doctSpecialist" name="field" [value]="doctor.doctSpecialist" required="true" type="text" class="form-control" placeholder="Enter Field">
+          </div>
+          <div class="mb-2">
+            <label for="">Age</label>
+            <input name="age" [(ngModel)]="doctor.doctAge" name="doctAge" [value]="doctor.doctAge" required="true" type="number" class="form-control" placeholder="Enter age">
+          </div>
+          <div class="mb-2">
+            <label for="gender">Choose Gender</label>
+            <select id="gender"[(ngModel)]="doctor.doctGender" [value]="doctor.doctGender" class="form-control" name="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="numberOfpatientAttneded"><span class="req"></span><strong> No. of Patients Attended:</strong> </label>
+            <input class="form-control" type="number" [(ngModel)]="doctor.numberOfpatientAttneded"   name="numberOfpatientAttneded" id="numberOfpatientAttneded" required
+                placeholder="No. of Patients Attended" />
+            
+        </div>
+          <div class="mb-2 mt-2">
+            <button type="submit" name="submit_reg" value="Register"(click)="saveDoctor()" class="btn btn-success main-btn reg-btn">Create</button>
+           <!-- <a routerLink="/" class="btn btn-danger ms-2">Close</a> -->
+          </div>
+          
+        </form>
+      </div>
+     
+    </div>
+  </div>
+</div>
+</div>
+<!-- <pre>{{doctor | json}}</pre> -->

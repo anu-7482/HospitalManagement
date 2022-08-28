@@ -1,0 +1,63 @@
+<div [ngStyle]="{'background'  : 'url(../assets/img/bg2.jpg)'}">
+<div class="bg">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p class="h3 fw-bold text-dark my-4">Create Patient</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <form >
+         
+            <fieldset>
+               
+
+                <div class="form-group">
+                    <label for="Name"><span class="req"> </span><strong> Name</strong>: </label>
+                    <input required type="text" [(ngModel)]="patient.patientName"  name="patientName" id="patientName"
+                        class="form-control phone" maxlength="28" placeholder="Enter your fullname..." />
+                </div>
+                <div class="form-group">
+                    <label for="dateOfVisit"><span class="req"> </span><strong> Date of Visit </strong>:</label>
+                    <input required type="text" [(ngModel)]="patient.dateOfVisit"  name="dateOfVisit" id="dateOfVisit"
+                        class="form-control phone" maxlength="28" placeholder="Enter date of vist..." />
+                </div>
+                <div class="form-group">
+                    <label for="visitedDoctor"><span class="req"> </span><strong>Select Vistited Doctor </strong>:</label>
+
+                    <select class="hideLabel form-control" [(ngModel)]="patient.visitedDoctor" name="Id" (change)="selectName(patient.doctId);">  
+                      <option selected="" value=""></option>  
+                   <option [ngValue]="k.docName" *ngFor="let k of doctors">  
+                       {{k.docName}}  
+                </option>  
+           </select> 
+                    <!-- <input required type="text" [(ngModel)]="patient.visitedDoctor"  name="visitedDoctor" id="visitedDoctor"
+                        class="form-control phone" maxlength="28" placeholder="Select Doctors Name.." /> -->
+                </div>
+                <div class="form-group">
+                    <label for="precription"><span class="req"> </span><strong> Prescription </strong>:</label>
+                    <input required type="text" [(ngModel)]="patient.precription"  name="precription" id="precription"
+                        class="form-control phone" maxlength="28" placeholder="Enter Speciality..." />
+                </div>
+
+                <div class="form-group">
+                    <label for="doctId"><span class="req"></span> <strong>Doctors Id:</strong>  </label>
+                    <input class="form-control" type="number"[(ngModel)]="patient.doctId"   name="doctId" id="doctId" required
+                        placeholder="Enter Doctors ID" />
+                    
+                </div>
+
+                <div class="form-group mt-2">
+                    <input class="btn btn-success main-btn reg-btn" type="submit" name="submit_reg" value="Create" (click)="registerPatNow()" >
+                </div>
+            </fieldset>
+        </form>
+        </div>
+      </div>
+    
+  </div>
+  </div>
+  <!-- <pre>{{patient|json}}</pre> -->

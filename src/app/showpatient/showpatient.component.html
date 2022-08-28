@@ -1,0 +1,82 @@
+<section id="home" class="hero-section">
+
+  <div class="main-container-size">
+    <div [ngStyle]="{'background'  :  'url(../assets/img/bg6.jpg)'}">
+    <div class="container">
+     
+              <h4 style="text-align: center" class="pat-info-color"> Patient Details</h4>
+
+              
+              <div class="table-wrapper">
+                <input  type="text"  placeholder="Please Enter The Id" [(ngModel)]="patientId">
+              <button type="submit" (click)="getPatientDetails(patientId)">Submit</button>
+                <table class="fl-table" >
+                  <thead>
+                    <tr>
+                      <th>Patient Id</th>
+                      <th>Patient Name</th>
+                      <th>Date of Visit</th>
+                      <th>Visited Doctor</th>
+                      <th>Doctor's ID</th>
+                      <th>Precription</th>
+                      <!-- <th>Delete</th> -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr >
+                      <td>{{ patients.patient.patientId}}</td>
+                      <td>{{ patients.patient.patientName }}</td>
+                      <td>{{ patients.patient.dateOfVisit }}</td>
+                      <td>{{ patients.patient.visitedDoctor }}</td>
+                      <td>{{ patients.doctor.doctId}}</td>
+                      <td>{{ patients.patient.precription }}</td>
+                       <!-- <td class="text-center"><button class="btn btn-danger btn-xs btn-left-mr" (click)="deletePatient(patients.patient.patientId)" ><span class="glyphicon glyphicon-remove" ></span> Delete</button></td> -->
+                    </tr>
+                  </tbody>
+
+                  <tbody></tbody>
+                </table>
+              </div>
+              
+            </div>
+            
+  </div>
+  </div>
+
+     
+</section>
+
+ <!-- <div class="main-container-size">
+  <div class="container table-height">
+   
+            <h4 style="text-align: center">All Patient List</h4>
+            <div class="table-wrapper">
+              <table class="fl-table">
+                <thead>
+                  <tr>
+                    <th>Patient Id</th>
+                    <th>Patient Name</th>
+                    <th>Date of Visit</th>
+                    <th>Visited Doctor</th>
+                    <th>Prescription</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let patient of patients">
+                    <td>{{ patient.patientId}}</td>
+                    <td>{{ patient.patientName }}</td>
+                    <td>{{ patient.dateOfVisit }}</td>
+                    <td>{{ patient.visitedDoctor }}</td>
+                    <td>{{ patient.precription }}</td>
+                     
+                  </tr>
+                </tbody>
+
+                <tbody></tbody>
+              </table>
+            </div>
+            
+          </div>
+          
+  </div>  -->
